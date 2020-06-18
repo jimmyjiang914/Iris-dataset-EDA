@@ -1,2 +1,2 @@
 # Iris-dataset-EDA
-Exploring the classic Iris dataset
+Playing around with the classic Iris dataset using R.
