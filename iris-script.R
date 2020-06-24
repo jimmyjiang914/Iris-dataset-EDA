@@ -71,14 +71,15 @@ fig4
 column_list <- colnames(iris)[1:4] # Obtain list of column names
 column_comb <- combn(column_list, 3) # Obtain all combinations of 3 columns
 
-fig <= NULL
+fig <- NULL
 
 # Creating a function for specifying a certain paste
 fig.num <- function(n){
   return(paste("fig", n, sep="."))
 }
 
-
+# Loops through all combinations, and generates a 3D plotly plot for each
+# 3D plot objects are assigned to a naming scheme: fig.1, fig.2, fig.n
 for (i in (1:4)) {
   feature1 <- column_comb[1,i]
   feature2 <- column_comb[2,i]
