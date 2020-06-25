@@ -18,8 +18,7 @@ species <- iris$Species # Assign species column as a variable
 
 # Sepal Length, Sepal Width, Petal Length, Petal Width are features/observations
 # that we will be able to train on and use to predict species
-
-head(iris,5) # Obtain first 4 rows of iris data set
+head(iris,10) # Obtain first 4 rows of iris data set
 tail(iris,5) # Obtain last 4 rows of iris data set
 
 summary(iris) # Obtain summary statistics
@@ -32,6 +31,7 @@ library(skimr) # Provides a more detailed set of packages for obtaining summary
 # statistics than the native summary function
 
 skim(iris) # Get detailed summary statistic
+quantile(iris$Sepal.Length,0.49) # Find specific percentiles
 
 # Groups by species, then performs a skim
 # %>% is a way to pass an object to the next object by way of a chain
@@ -97,3 +97,8 @@ for (i in (1:4)) {
 }
 
 fig.2
+
+# Data wrangling
+# EDA
+# Modeling
+# Communicate results
