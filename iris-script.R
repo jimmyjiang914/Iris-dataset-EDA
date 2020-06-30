@@ -78,7 +78,7 @@ fig.num <- function(n){
   return(paste("fig", n, sep="."))
 }
 
-# Loops through all combinations, and generates a 3D plotly plot for each
+# Loops through all combinations, and generates a 3D plotly plot for each.
 # 3D plot objects are assigned to a naming scheme: fig.1, fig.2, fig.n
 for (i in (1:4)) {
   feature1 <- column_comb[1,i]
@@ -96,4 +96,25 @@ for (i in (1:4)) {
 
 }
 
-fig.2
+ 
+fig.1 # Return interactive 3D plot
+
+
+
+# Modeling: From the visualizations and summary statistics above, we observe apparent clustering between petal and sepal features across species categories. 
+# Possible models we can use are multinomial logistic regression, and K nearest neighbors
+
+
+# No stratification is needed for train-test split because n across species is consistently 50.
+
+split <- sort(sample(nrow(iris),nrow(iris)*.7))
+
+train <- iris[split,]
+test <- iris[-split,]
+
+# K nearest neighbors
+library(class)
+library(MLmetrics)
+
+output = knn(train[1:4], test[1:4], unlist(train[5],use.names=FALSE))
+Accuracy(output, unlist(test[5], use.names = FALSE))
