@@ -96,7 +96,6 @@ for (i in (1:4)) {
 
 }
 
-<<<<<<< HEAD
  
 fig.1 # Return interactive 3D plot
 
@@ -119,11 +118,10 @@ library(MLmetrics)
 
 output = knn(train[1:4], test[1:4], unlist(train[5],use.names=FALSE))
 Accuracy(output, unlist(test[5], use.names = FALSE))
-=======
+
 fig.2
 
 # Data wrangling
 # EDA
 # Modeling
 # Communicate results
->>>>>>> 0837192e45e0aef2f1618af2e85f022ffe794195
